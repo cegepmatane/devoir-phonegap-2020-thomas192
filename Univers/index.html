@@ -8,6 +8,7 @@
   <script src="modele/Galaxie.js"></script>
   <script src="donnee/GalaxieDAO.js"></script>
   <script src="vue/VueListeGalaxie.js"></script>
+  <script src="vue/VueAjouterGalaxie.js"></script>
   <script defer src="Application.js"></script>
 
 </head>
@@ -21,6 +22,34 @@
     <ul id="liste-galaxie">
       <li><a href="#galaxie/{Galaxie.id}" class="liste-galaxie-item">{Galaxie.nom}</a></li>
     </ul>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-ajouter-galaxie">
+  <div class="page">
+    <h1>Ajouter une galaxie</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification de la galaxie</legend>
+        <div>
+          <label for="galaxie-nom">Nom</label>
+          <input type="text" id="galaxie-nom"/>
+        </div>
+        <div>
+          <label for="galaxie-constellation">Constellation</label>
+          <input type="text" id="galaxie-constellation"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>D&eacute;tails sur la galaxie</legend>
+        <div>
+          <label for="galaxie-description">Description</label>
+          <textarea id="galaxie-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
   </div>
   </script>
 
