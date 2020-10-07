@@ -17,4 +17,13 @@ class GalaxieDAO {
     }
     return this.listeGalaxie;
   }
+
+  ajouter (galaxie) {
+    if (this.listeGalaxie.length > 0)
+      galaxie.id = this.listeGalaxie[this.listeGalaxie.length-1].id + 1.
+    else
+      galaxie.id = 0;
+
+    this.listeGalaxie[galaxie.id] = galaxie;
+  }
 }
