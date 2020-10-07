@@ -4,6 +4,10 @@ class VueListeGalaxie {
     this.listeGalaxieDonnee = null;
   }
 
+  initialiserListeGalaxie(listeGalaxieDonnee) {
+    this.listeGalaxieDonnee = listeGalaxieDonnee;
+  }
+
   afficher() {
     document.getElementsByTagName("body")[0].innerHTML = this.html;
 
