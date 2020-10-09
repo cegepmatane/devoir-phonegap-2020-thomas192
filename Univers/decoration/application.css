@@ -1,31 +1,21 @@
 ﻿@import "normalize.css" ;
 
 @font-face {
-  font-family: 'The Perfect Christmas';
-  src: url('font/the_perfect_christmas/The Perfect Christmas.ttf')  format('truetype');
+  font-family: 'SK Falcon Rounded Light';
+  src: url('font/sk_falcon_rounded_light/Salih Kizilkaya - SKFalconRLight-Light.ttf')  format('truetype');
 }
 
 @font-face {
-  font-family: 'Waving at Christmas';
-  src: url('font/waving_at_christmas/Waving at Christmas.ttf')  format('truetype');
-}
-
-@font-face {
-  font-family: 'Cream Cake';
-  src: url('font/cream_cake/Cream Cake.ttf')  format('truetype');
-}
-
-@font-face {
-  font-family: 'Hello Christmas Icon';
-  src: url('font/hello_christmas_icons/Hello-Christmas-Icon-trial.ttf')  format('truetype');
+  font-family: 'SK Falcon Rounded Light Italic';
+  src: url('font/sk_falcon_rounded_light_italic/Salih Kizilkaya - SKFalconRLight-LightItalic.ttf')  format('truetype');
 }
 
 :root {
   --theme-rouge: #fd341f;
-  --theme-blanc-transparent: rgba(255,255,255,0.3);
-  --theme-bleu-pale: rgba(151,219,246,1);
-  --theme-bleu-fonce: rgba(63,155,191,1);
-  --theme-vert: #408450;
+  --theme-noir-transparent: rgba(0, 0, 0, 0.5);
+  --theme-blanc-transparent: rgba(255, 255, 255, 0.3);
+  --theme-rouge-galaxie: #9B4B47;
+  --theme-bleu-galaxie:#A6B8D1;
   --theme-blanc: white;
   --theme-noir: black;
 
@@ -33,7 +23,7 @@
 }
 
 html {
-  font-family:'Cream Cake', sans-serif;
+  font-family:'SK Falcon Rounded Light', sans-serif;
   font-size:48px;
 }
 
@@ -42,8 +32,7 @@ html {
 }
 
 .liste-galaxie-item {
-  color:var(--theme-rouge);
-  text-transform : capitalize;
+  color:var(--theme-blanc);
   text-decoration:none;
 }
 
@@ -51,32 +40,24 @@ html {
   position:relative;
   display:block;
   margin-bottom:0.25rem;
-  background-color:var(--theme-blanc-transparent);
+  background-color:var(--theme-noir-transparent);
   border-radius:var(--theme-bordure-rondeur);
   padding:0.25rem;
   padding-left:1.50rem;
-  box-shadow: 2px 2px var(--theme-blanc);
 }
 
-#liste-galaxie li::before {
-   content:"X";
-   text-align:center;
-   color:var(--theme-rouge);
-   font-size:1.25rem;
+#liste-galaxie li img{
    position:absolute;
-   top:0.1rem;
+   top:0.35rem;
    left:0.25rem;
    height:1rem;
-   width:1rem;
-
-   font-family:'Hello Christmas Icon', sans-serif;
-
-
+   filter: invert(100%);
 }
 
 fieldset {
-  color:var(--theme-rouge);
-  border-color: var(--theme-rouge);
+  color:var(--theme-blanc);
+  border-color: var(--theme-blanc);
+  background-color:var(--theme-noir-transparent);
   border-radius:var(--theme-bordure-rondeur);
 }
 
@@ -100,7 +81,7 @@ textarea {
 
   text-align:center;
   font-size:2rem;
-  font-family:'The Perfect Christmas', sans-serif;
+  font-family:'SK Falcon Rounded Light', sans-serif;
   font-weight:normal;
   line-height:1.8rem;
 
@@ -113,50 +94,45 @@ textarea {
 
 @keyframes pulse {
   0% {
-    background-color:var(--theme-bleu-fonce);
+    background-color:var(--theme-bleu-galaxie);
   }
   100% {
-    background-color:var(--theme-bleu-pale);
+    background-color:var(--theme-rouge-galaxie);
   }
 }
 
-
-
 .page {
   position:relative;
-  background-color:var(--theme-bleu-pale);
+  background-image:url(illustration/galaxy.png);
   padding:5%;
   min-height: 100vh;
-  box-sizing: border-box;
-
-  background-image:url(illustration/cadeau-noel.png);
-  background-repeat:no-repeat;
+  background-repeat:repeat;
   background-size:cover;
-  background-position:right bottom;
+  background-position:top center;
   background-attachment:fixed;
-  background-size: 50%;
-  color:var(--theme-rouge);
+  background-size: 100%;
 }
 
 
 .page h1{
-  font-family:'The Perfect Christmas', sans-serif;
+  font-family:'SK Falcon Rounded Light', sans-serif;
   text-align:center;
   font-size:2rem;
-  font-family:'The Perfect Christmas', sans-serif;
+  font-family:'SK Falcon Rounded Light', sans-serif;
   font-weight:normal;
   line-height:1.8rem;
-  color:var(--theme-vert);
-  text-shadow: 2px 2px var(--theme-blanc);
+  color:var(--theme-blanc);
 
 }
 
 .page h2,
 .page p {
-  background-color:var(--theme-blanc-transparent);
+  background-color:var(--theme-noir-transparent);
   border:0px transparent solid;
   border-radius:var(--theme-bordure-rondeur);
   padding:0.25rem;
+  color:var(--theme-blanc);
+  font-size: 48px;
 }
 
 
@@ -165,13 +141,13 @@ textarea {
   display:block;
   text-decoration: none;
   font-family:sans-serif;
-  background-color:#fd9f44;
+  background-color:var(--theme-rouge-galaxie);
   color:var(--theme-blanc);
   border:0px transparent solid;
   border-radius:var(--theme-bordure-rondeur);
   padding:0.25rem;
-  font-family:'Waving at Christmas', sans-serif;
-  font-size:1rem;
+  font-family:'SK Falcon Rounded Light Italic', sans-serif;
+  font-size:0.75rem;
   text-align:center;
   width:50%;
   margin:0 auto;
