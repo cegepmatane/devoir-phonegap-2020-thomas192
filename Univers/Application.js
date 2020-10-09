@@ -1,9 +1,10 @@
 class Application {
-  constructor(window, galaxieDAO, vueListeGalaxie, vueAjouterGalaxie) {
+  constructor(window, galaxieDAO, vueListeGalaxie, vueAjouterGalaxie, vueGalaxie) {
     this.window = window;
     this.galaxieDAO = galaxieDAO;
     this.vueListeGalaxie = vueListeGalaxie;
     this.vueAjouterGalaxie = vueAjouterGalaxie;
+    this.vueGalaxie = vueGalaxie;
 
     // Equivalent de function(galaxie){this.actionAjouterGalaxie(galaxie)}
     this.vueAjouterGalaxie.initialiserActionAjouterGalaxie(galaxie =>
@@ -23,6 +24,11 @@ class Application {
       this.vueListeGalaxie.afficher();
     } else if (hash.match(/^#ajouter-galaxie/)) {
       this.vueAjouterGalaxie.afficher();
+    } else {
+      let navigation = hash.match(/^#galaxie\/([0-9]+)/);
+      let idGalaxie = navigation[1];
+      this.vueGalaxie.initialiserGalaxie(this.galaxieDAO.lister()[idGalaxie]);
+      this.vueGalaxie.afficher();
     }
   }
 
@@ -33,4 +39,4 @@ class Application {
 
 }
 
-new Application(window, new GalaxieDAO(), new VueListeGalaxie(), new VueAjouterGalaxie());
+new Application(window, new GalaxieDAO(), new VueListeGalaxie(), new VueAjouterGalaxie(), new VueGalaxie());
