@@ -11,6 +11,7 @@
   <script src="vue/VueGalaxie.js"></script>
   <script src="vue/VueListeGalaxie.js"></script>
   <script src="vue/VueAjouterGalaxie.js"></script>
+  <script src="vue/VueModifierGalaxie.js"></script>
 
   <script defer src="Application.js"></script>
 
@@ -23,7 +24,11 @@
     <h1>Liste des galaxies</h1>
     <a class="action" href="#ajouter-galaxie">Ajouter une galaxie</a>
     <ul id="liste-galaxie">
-      <li><img src="decoration/illustration/space-shuttle.svg"><a href="#galaxie/{Galaxie.id}" class="liste-galaxie-item">{Galaxie.nom}</a></li>
+      <li>
+        <img src="decoration/illustration/space-shuttle.svg">
+        <a href="#galaxie/{Galaxie.id}" class="liste-galaxie-item">{Galaxie.nom}</a>
+        <a href="#modifier-galaxie/{GalaxieBis.id}" class="action-modifier">Modifier</a>
+      </li>
     </ul>
   </div>
   </script>
@@ -63,6 +68,34 @@
     <p id="galaxie-constellation"></p>
     <p id="galaxie-description"></p>
     <a href="#" class="action">Revenir &agrave; la liste</a>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-modifier-galaxie">
+  <div class="page">
+    <h1>Modifier une galaxie</h1>
+    <form id="formulaire-modifier">
+      <fieldset>
+        <legend>Identification de la galaxie</legend>
+        <div>
+          <label for="galaxie-nom">Nom</label>
+          <input type="text" id="galaxie-nom"/>
+        </div>
+        <div>
+          <label for="galaxie-constellation">Constellation</label>
+          <input type="text" id="galaxie-constellation"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>D&eacute;tails sur la galaxie</legend>
+        <div>
+          <label for="galaxie-description">Description</label>
+          <textarea id="galaxie-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
   </div>
   </script>
 
