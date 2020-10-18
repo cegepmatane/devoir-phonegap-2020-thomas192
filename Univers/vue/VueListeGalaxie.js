@@ -23,6 +23,8 @@ class VueListeGalaxie {
       listeGalaxieItemHtmlRemplacement =
       listeGalaxieItemHtmlRemplacement.replace("{Galaxie.nom}",
       this.listeGalaxieDonnee[numeroGalaxie].nom);
+      listeGalaxieItemHtmlRemplacement.replace("{GalaxieBis.id}",
+      this.listeGalaxieDonnee[numeroGalaxie].id);
       listeGalaxieHtmlRemplacement += listeGalaxieItemHtmlRemplacement;
     }
 
