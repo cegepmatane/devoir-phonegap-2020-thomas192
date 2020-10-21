@@ -18,13 +18,14 @@ class VueListeGalaxie {
     for (var numeroGalaxie in this.listeGalaxieDonnee) {
       let listeGalaxieItemHtmlRemplacement = listeGalaxieItemHtml;
       listeGalaxieItemHtmlRemplacement =
-      listeGalaxieItemHtmlRemplacement.replace("{Galaxie.id}",
-      this.listeGalaxieDonnee[numeroGalaxie].id);
+        listeGalaxieItemHtmlRemplacement.replace("{Galaxie.id}",
+        this.listeGalaxieDonnee[numeroGalaxie].id);
       listeGalaxieItemHtmlRemplacement =
-      listeGalaxieItemHtmlRemplacement.replace("{Galaxie.nom}",
-      this.listeGalaxieDonnee[numeroGalaxie].nom);
-      listeGalaxieItemHtmlRemplacement.replace("{GalaxieBis.id}",
-      this.listeGalaxieDonnee[numeroGalaxie].id);
+        listeGalaxieItemHtmlRemplacement.replace("{Galaxie.nom}",
+        this.listeGalaxieDonnee[numeroGalaxie].nom);
+      listeGalaxieItemHtmlRemplacement =
+        listeGalaxieItemHtmlRemplacement.replace("{Galaxie.id}",
+        this.listeGalaxieDonnee[numeroGalaxie].id);
       listeGalaxieHtmlRemplacement += listeGalaxieItemHtmlRemplacement;
     }
 
