@@ -1,0 +1,189 @@
+﻿@import "normalize.css" ;
+
+@font-face {
+  font-family: 'SK Falcon Rounded Light';
+  src: url('font/sk_falcon_rounded_light/Salih Kizilkaya - SKFalconRLight-Light.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'SK Falcon Rounded Light Italic';
+  src: url('font/sk_falcon_rounded_light_italic/Salih Kizilkaya - SKFalconRLight-LightItalic.ttf')  format('truetype');
+}
+
+:root {
+  --theme-rouge: #fd341f;
+  --theme-noir-transparent: rgba(0, 0, 0, 0.5);
+  --theme-blanc-transparent: rgba(255, 255, 255, 0.3);
+  --theme-rouge-galaxie: #9B4B47;
+  --theme-bleu-galaxie:#A6B8D1;
+  --theme-blanc: white;
+  --theme-noir: black;
+
+  --theme-bordure-rondeur: 0.5rem;
+}
+
+html {
+  font-family:'SK Falcon Rounded Light', sans-serif;
+  font-size:38px;
+}
+
+#liste-galaxie {
+  list-style-type:none;
+}
+
+#liste-galaxie li {
+  position:relative;
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  flex-direction:row;
+  justify-content:flex-start;
+  margin-bottom:0.25rem;
+  background-color:var(--theme-noir-transparent);
+  border-radius:var(--theme-bordure-rondeur);
+  padding:0.25rem;
+  padding-left:1.50rem;
+}
+
+#liste-galaxie li img{
+   position:absolute;
+   top:0.35rem;
+   left:0.25rem;
+   height:1rem;
+   filter: invert(100%);
+}
+
+.liste-galaxie-item {
+  color:var(--theme-blanc);
+  text-decoration:none;
+  font-size:30px;
+}
+
+.action-modifier{
+  position:relative;
+  display:block;
+  margin-left: auto;
+  text-decoration: none;
+  font-family:sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  color:var(--theme-blanc);
+  border:0px transparent solid;
+  border-radius:var(--theme-bordure-rondeur);
+  padding:0.25rem;
+  font-family:'SK Falcon Rounded Light Italic', sans-serif;
+  font-size:0.55rem;
+  text-align:center;
+  width:40%;
+  box-sizing: border-box;
+  float: right;
+  margin-top:0rem;
+  margin-bottom:0rem;
+  box-shadow: 1px 1px var(--theme-blanc);
+}
+
+fieldset {
+  color:var(--theme-blanc);
+  border-color: var(--theme-blanc);
+  background-color:var(--theme-noir-transparent);
+  border-radius:var(--theme-bordure-rondeur);
+}
+
+input[type="text"],
+textarea {
+  display:block;
+  width:100%;
+  border:none;
+  background-color:var(--theme-blanc-transparent);
+  border-radius:var(--theme-bordure-rondeur);
+}
+
+#page-chargement-application{
+  position:relative;
+  height:100vh;
+  background-image:url(illustration/pngwing.com.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:bottom center;
+  background-attachment:fixed;
+
+  text-align:center;
+  font-size:1rem;
+  font-family:'SK Falcon Rounded Light', sans-serif;
+  font-weight:normal;
+  line-height:1.8rem;
+
+  padding:10%;
+  color:var(--theme-blanc);
+  text-shadow: 2px 2px var(--theme-noir);
+  animation: pulse 1.5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0% {
+    background-color:var(--theme-bleu-galaxie);
+  }
+  100% {
+    background-color:var(--theme-rouge-galaxie);
+  }
+}
+
+.page {
+  position:relative;
+  background-image:url(illustration/galaxy.png);
+  padding:5%;
+  min-height: 100vh;
+  background-repeat:repeat;
+  background-size:cover;
+  background-position:top center;
+  background-attachment:fixed;
+  background-size: 100%;
+}
+
+
+.page h1{
+  font-family:'SK Falcon Rounded Light', sans-serif;
+  text-align:center;
+  font-size:2rem;
+  font-family:'SK Falcon Rounded Light', sans-serif;
+  font-weight:normal;
+  line-height:1.8rem;
+  color:var(--theme-blanc);
+
+}
+
+.page h2,
+.page p {
+  background-color:var(--theme-noir-transparent);
+  border:0px transparent solid;
+  border-radius:var(--theme-bordure-rondeur);
+  padding:0.25rem;
+  color:var(--theme-blanc);
+  font-size: 38px;
+}
+
+
+.action{
+  position:relative;
+  display:block;
+  text-decoration: none;
+  font-family:sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  color:var(--theme-blanc);
+  border:0px transparent solid;
+  border-radius:var(--theme-bordure-rondeur);
+  padding:0.25rem;
+  font-family:'SK Falcon Rounded Light Italic', sans-serif;
+  font-size:0.75rem;
+  text-align:center;
+  width:50%;
+  margin:0 auto;
+  box-sizing: border-box;
+  margin-top:0.25rem;
+  margin-bottom:0.25rem;
+  box-shadow: 2px 2px var(--theme-blanc);
+}
+
+.action:active {
+  border:0px transparent solid;
+}

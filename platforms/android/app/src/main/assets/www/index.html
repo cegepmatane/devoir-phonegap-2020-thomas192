@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Liste des galaxies</title>
+  <link rel="stylesheet" href="decoration/application.css">
+  <style></style>
+
+  <script src="cordova.js"></script>
+  <script src="modele/Galaxie.js"></script>
+  <script src="donnee/GalaxieDAO.js"></script>
+
+  <script src="vue/VueGalaxie.js"></script>
+  <script src="vue/VueListeGalaxie.js"></script>
+  <script src="vue/VueAjouterGalaxie.js"></script>
+  <script src="vue/VueModifierGalaxie.js"></script>
+
+  <script defer src="Application.js"></script>
+
+</head>
+<body>
+  <div id="page-chargement-application">Chargement de l'application Univers</div>
+
+  <script type="plain/text" id="html-vue-liste-galaxie">
+  <div class="page">
+    <h1>Liste des galaxies</h1>
+    <a class="action" href="#ajouter-galaxie">Ajouter une galaxie</a>
+    <ul id="liste-galaxie">
+      <li>
+        <img src="decoration/illustration/space-shuttle.svg">
+        <a href="#galaxie/{Galaxie.id}" class="liste-galaxie-item">{Galaxie.nom}</a>
+        <a href="#modifier-galaxie/{Galaxie.id}" class="action-modifier">Modifier</a>
+      </li>
+    </ul>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-ajouter-galaxie">
+  <div class="page">
+    <h1>Ajouter une galaxie</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification de la galaxie</legend>
+        <div>
+          <label for="galaxie-nom">Nom</label>
+          <input type="text" id="galaxie-nom"/>
+        </div>
+        <div>
+          <label for="galaxie-constellation">Constellation</label>
+          <input type="text" id="galaxie-constellation"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>D&eacute;tails sur la galaxie</legend>
+        <div>
+          <label for="galaxie-description">Description</label>
+          <textarea id="galaxie-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-galaxie">
+  <div class="page">
+    <h1>Galaxie</h1>
+    <h2 id="galaxie-nom"></h2>
+    <p id="galaxie-constellation"></p>
+    <p id="galaxie-description"></p>
+    <a href="#" class="action">Revenir &agrave; la liste</a>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-modifier-galaxie">
+  <div class="page">
+    <h1>Modifier une galaxie</h1>
+    <form id="formulaire-modifier">
+      <fieldset>
+        <legend>Identification de la galaxie</legend>
+        <div>
+          <label for="galaxie-nom">Nom</label>
+          <input type="text" id="galaxie-nom"/>
+        </div>
+        <div>
+          <label for="galaxie-constellation">Constellation</label>
+          <input type="text" id="galaxie-constellation"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>D&eacute;tails sur la galaxie</legend>
+        <div>
+          <label for="galaxie-description">Description</label>
+          <textarea id="galaxie-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+  </div>
+  </script>
+
+</body>
+</html>
